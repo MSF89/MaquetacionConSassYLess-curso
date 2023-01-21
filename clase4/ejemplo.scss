@@ -1,0 +1,74 @@
+@use 'sass:math';
+@import 'variables.scss';
+@import 'funcionesYmixins';
+
+
+// h1{
+//     background-color: $color;
+// }
+p{
+    background-color: $color;
+
+    strong{
+        color: white;
+    }
+}
+div.fondo{
+    @include bg ("image", "ejemplo.jpg", contain, top center);
+    height: tamanio(md);
+}
+
+h1{
+    @include bg ("color", #bbb);
+}
+
+// @for $i from 1 through $columnas{
+//     .col-#{$i}{
+//         width: percentage($i / $columnas);
+//     }
+// }
+
+// @each $indice, $valor in $breakpoints{
+    //     .col-#{$indice}{
+        //         width: $valor;
+        //     }
+        // }
+        .color{
+            color: yellow;
+        }
+        
+        @each $indice, $valor in $breakpoints{
+            @media screen and (min-widht : $valor) {
+                @for $i from 1 through $columnas{
+                    .col-#{$indice}-#{$i}{
+                        width: percentage($i / $columnas );                
+            }
+        }
+    }
+}
+
+//colores
+@each $clave, $prop in $propiedades{
+    @each $nombre, $color in $colores{
+        .#{$clave}-#{$nombre}{
+            #{$prop}: $color;
+        }
+    }
+}
+
+// divs
+%comun{
+    width: 40%;
+    display: inline-block;
+    border: solid 1px black;
+}
+
+.primero{
+    background-color: seagreen;
+    @extend %comun;
+}
+
+.segundo{
+    background-color: cadetblue;
+    @extend %comun;
+}

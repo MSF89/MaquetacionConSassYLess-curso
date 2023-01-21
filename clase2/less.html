@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Less</title>
+    <link rel="stylesheet" href="dist/main.css">
+    <link rel="stylesheet" href="main.js">
+</head>
+<body>
+    <header class="principal">
+        <h1>LESS</h1>
+
+        <button class="iconMenu">&equiv;</button>
+
+        <nav><a href="">Home</a>
+             <a href="">About</a> 
+             <a href="">Contact</a>
+             <a href="">LogIn</a>
+        </nav>
+
+    </header>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione eum atque perspiciatis, enim reprehenderit consequuntur commodi ab eveniet odio cumque quaerat tempora quibusdam minus id modi iusto, adipisci dicta excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, vitae assumenda quasi reprehenderit fuga voluptate id rem doloribus est eius natus facere, veniam quae odit eaque laboriosam distinctio necessitatibus aliquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati nisi autem omnis doloribus quo nam laudantium assumenda est! Labore corporis dolorum quod adipisci fugiat culpa nesciunt dolores aliquid rem eum. </p>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script>
+        var btnMenu = document.querySelector('button.iconMenu');
+        var navPrincipal = document.querySelector('header.principal nav');
+
+        btnMenu.onclick = function(){ 
+        navPrincipal.classList.toggle('active')
+        btnMenu.classList.toggle('active')
+        }
+    </script>
+    <footer>
+        <p>&copy 2021 Todos Los Derechos Reservados</p>
+    </footer>
+</body>
+</html>

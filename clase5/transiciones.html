@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style>
+        h1{
+            width: 15%;
+            background-color: lightgreen;
+            color: green;
+
+            /* transition-property: background-color; */
+            transition-property: width, color background-color;
+            transition-duration: 2s, 5s;
+            transition-timing-function: cubic-bezier(.71, -0.62, .26, 1.66);
+            /* transition-delay: 500ms; */
+            /* transition-timing-function: linear; */
+            /* transition-timing-function: ease; */
+            /* transition-timing-function: ease-in; */
+        }
+        h1:hover{
+            background-color: lightskyblue;
+            color: cadetblue;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transiciones</h1>
+</body>
+</html>

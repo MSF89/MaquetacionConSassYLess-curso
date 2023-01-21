@@ -1,0 +1,134 @@
+@colorPrimario: #85cc8f;
+@colorSecundario: #84bef5;
+
+@light:#edf1f5;
+@dark:#474a4d;
+
+@medidaBase: 18px;
+@breakPoint: 768px;
+
+.padding(@medida){
+    padding: @medida (@medida*3);
+}
+.dFlex(@direction, @justify, @align){
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+*{
+    box-sizing: border-box;
+    font-size: @medidaBase;
+}
+header.principal{
+    background: @light;
+    height: 20vh;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    .dFlex(row , space-between , center);
+    .padding(2%);
+    position: sticky;
+    top: 0%;
+
+    h1{
+        color: @dark;
+        font-size: (@medidaBase*2);
+    }
+    
+    button.iconMenu{
+        width: 40px;
+        height: 42px;
+        font-size: (@medidaBase*2);
+        color: lighten(@dark, 15%);
+        background-color: inherit;
+        outline: 0px solid  transparent;
+        border: 4px solid lighten(@dark, 15%);
+        border-radius: 12%;
+        .dFlex(row, center, center);
+    }
+    button.iconMenu.active{
+        background-color: lighten(@dark, 15%);
+        color: @light;
+        // border: @light 4px solid;
+    }
+
+    nav{
+        
+        position: absolute;
+        background: darken(@light, 5%);
+        .dFlex(column, space-around, stretch);
+        display: none;
+        left: 0%;
+        width: 100%;
+        bottom: -20vh;
+        height: 20vh;
+
+        &.active{
+            display: flex;
+        }
+
+        a{
+            height: 60px;
+            color: inherit; /*Hereda el color*/
+            text-decoration: none;
+            text-transform: uppercase;
+            .dFlex(row, center, center);
+            border-bottom: .5px solid @light;
+
+            &:hover{
+                background: darken(@light, 15%);
+            }
+            &:first-of-type{
+                font-size: (@medidaBase*1.1);
+            }
+            
+            &:last-of-type{
+                color: @light;
+                background: @dark;
+                .padding(5px);
+            }
+            &:last-of-type:hover{
+                background: lighten(@dark, 15%);
+            }
+        }
+    }
+}
+footer{
+    color: @light;
+    background: @dark;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: @breakPoint){
+    header.principal {
+        
+        button.iconMenu{
+            display: none;
+        }
+
+        nav{
+            width: auto;
+            height: auto;
+            .dFlex(row, space-between, baseline);
+            position: static;
+            background: @light;
+            a{
+                display: inline;
+                height: auto;
+                .padding(3px);
+                font-size: @medidaBase;
+
+                &:hover{
+                    background: darken(@light, 5%);
+                }
+                        
+            }
+        }
+    }
+}
+    

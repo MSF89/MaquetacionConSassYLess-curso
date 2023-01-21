@@ -1,0 +1,23 @@
+$color: green;
+$columnas: 12;
+
+$breakpoints:
+    sm      576px,
+    md      768px,
+    lg      992px,
+    xl      1200px,
+    xxl     1400px;
+
+$colores:
+    primario        rgba(108, 158, 240),
+    secundario      rgba(207, 108, 240),
+    claro           #fafafa,
+    oscuro          #4e4e4e,
+    correcto        rgba(144, 209, 144),
+    advertencia     rgba(209, 192, 144),
+    error           rgba(180, 60, 75);
+
+$propiedades:
+texto               color,
+bg                  background-color;
+

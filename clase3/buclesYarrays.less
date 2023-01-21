@@ -1,0 +1,37 @@
+@colores: blue, orange, red, green;
+
+// .bucle(@i : 1) when (@i <= 10) {
+//     line-height: @i;
+//     .bucle(@i + 1)
+// }
+
+// p{
+//     .bucle;
+// }
+
+.colores(@i : 1) when (@i <= length(@colores)){
+    &:nth-of-type(@{i}){
+        background-color: extract(@colores, @i);
+    }
+    .colores(@i + 1)
+}
+
+nav a{
+    display: inline-block;
+    
+    .colores;
+}
+
+@columnas : 12;
+
+.grilla(@i: 1) when (@i <= @columnas){
+    .col-@{i}{
+        width: percentage( (@i / @columnas) ) ;
+    }
+    .grilla(@i + 1)
+}
+
+.grilla;
+
+   
+

@@ -1,0 +1,60 @@
+@mixin dGrid($cantCol, $tamCol, $cantFil, $tamFil, $gap:0, $tamAutoFil: auto){
+    display: grid;
+    grid-template-columns: repeat($cantCol, $tamCol);
+    grid-template-rows: repeat($cantFil, $tamFil);
+    grid-gap: $gap;
+    grid-auto-rows: $tamAutoFil;
+}
+
+
+#galeria .container{
+    width: 100%;
+    @include dGrid(12, 1fr, 0, 0, 0 10px, 80vh);   
+    
+    
+    .item{
+        grid-column: 3 span;
+        padding-bottom: 5px;
+        box-shadow: 8px 10px 12px rgba(50, 71, 92, 0.6) ;
+        background-color: white;
+        img{
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+        }
+    }
+
+    h3{
+        font-size: 1.2rem;
+    }
+    h3, p{
+        padding: 0 10px;
+        overflow: hidden;
+    }
+    p{
+        height: 15%;
+    }
+
+}
+
+footer.principal{
+    margin-top: 30px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #galeria .container{        
+        .item{
+            grid-column: 6 span;
+        }
+    }
+}
+@media screen and (max-width: 468px) {
+
+    #galeria .container{        
+        .item{
+            grid-column: 12 span;
+        }
+    }
+}

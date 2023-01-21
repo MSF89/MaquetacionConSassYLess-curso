@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica multimedia</title>
+    <style>
+        /* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+        #reproductor{
+            position: relative;
+            width: 50vw;
+            height: 60vh;
+            background-color: black;
+        }
+           
+        
+        video{
+            /* margin: 10px; */
+            width: 50vw;
+            height: 60vh;
+        }
+        #botones{
+          
+             position: absolute;
+             height: 100%;
+             width: 100%;
+             background: rgba(0, 0, 0, 0.4);
+             top: 0;
+             left: 0;
+
+             display: none;
+             justify-content: center;
+             align-items: center;
+        }
+        #reproductor:hover #botones{
+            display: flex;
+        }
+        #botones img{
+            
+            width: 20vw;
+            height: 20vh;  
+            
+        }
+        #botones img:last-of-type{
+            width: 10vw;
+            height: 10vh;
+        }
+        #botones img:nth-of-type(2){
+            display: none;
+        }
+      
+       
+    </style>
+</head>
+<body>
+    <h1>practica multimedia</h1>
+    <div id="reproductor">
+        <video src="media/video-manuelita.mp4" loop ></video> 
+        <!-- <video src="media/a-little-bottle-of-water.mp4" controls></video>
+        <video src="media/video-manuelita2.mp4" controls></video>
+        <video src="media/a-little-bottle-of-water2.mp4" controls></video> -->
+        <!-- <source src="media/a-little-bottle-of-water.mp4">
+        <source src="media/video-manuelita2.mp4">
+        <source src="media/a-little-bottle-of-water2.mp4"> -->
+            <div id="botones"> 
+            <img src="media/playButton.svg" alt="" id="btnPlay"></img>
+            <img src="media/pauseButton.svg" alt="" id="btnPause"></img>
+            <img src="media/nextButton.svg" alt="" id="btnNext"></img>
+            </div>
+    </div>
+    <script>
+        var video = document.querySelector('video')
+
+        document.querySelector('#btnPlay').onclick = function(){
+            video.play()
+            this.style.display = 'none'
+            document.querySelector('#btnPause').style.display = 'inline-block'
+        }
+        document.querySelector('#btnPause').onclick = function(){
+            video.pause()
+            this.style.display = 'none'
+            document.querySelector('#btnPlay').style.display = 'inline-block'
+        }
+
+        
+        var arrayVideos = ['media/video-manuelita.mp4', 'media/a-little-bottle-of-water.mp4', 'media/video-manuelita2.mp4', 'media/a-little-bottle-of-water2.mp4' ]
+
+        var numVideo = 0
+        
+        document.querySelector('#btnNext').onclick = function(){
+            numVideo++
+
+           if(numVideo == arrayVideos.length){
+               numVideo = 0
+           }
+            video.src = arrayVideos[numVideo]
+        }
+    </script>
+</body>
+</html>
